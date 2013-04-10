@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<!-- XML comment yo! -->
+
+<FunctionList id="0" class="natlab.ast.FunctionList">
+
+	<Symboltable>
+		<Entry symbol="fibonacci" original="fibonacci" decl="-1" />
+	</Symboltable>
+	<FunctionDecl id="1" class="natlab.ast.FunctionDecl" name="fibonacci">
+		<Symboltable>
+			<Entry symbol="val" original="val" decl="-1" />
+			<Entry symbol="n" original="n" decl="-1" />
+		</Symboltable>
+		<ParamDecl>
+			<VariableDecl id="2" class="natlab.ast.VariableDecl" id="n" />
+			<VariableDecl id="3" class="natlab.ast.VariableDecl" id="val" />
+		</ParamDecl>
+		<InputParam>
+			<Name>Text tag test <br /> interleaved with the br tag.</Name>
+		</InputParam>
+	</FunctionDecl>
+	
+	<script>
+     <![CDATA[
+     // CDATA test yo!
+      function matchwo(a,b)
+      {
+          if (a < b && a < 0) then
+          {
+              return 1;
+          }
+          else
+          {
+              return 0;
+          }
+      }
+      ]]>
+	</script>
+	
+</FunctionList>

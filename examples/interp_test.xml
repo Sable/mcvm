@@ -1,0 +1,106 @@
+<CompilationUnits id="0">
+    <Script id="1">
+        <Symboltable>
+            <Entry decl="-1" original="d" symbol="d"/>
+            <Entry decl="-1" original="b" symbol="b"/>
+            <Entry decl="-1" original="c" symbol="c"/>
+            <Entry decl="-1" original="a" symbol="a"/>
+            <Entry decl="-1" original="i" symbol="i"/>
+        </Symboltable>
+        <StmtList>
+            <VariableDecl id="2" varId="a"/>
+            <VariableDecl id="3" varId="b"/>
+            <VariableDecl id="4" varId="c"/>
+            <VariableDecl id="5" varId="d"/>
+            <VariableDecl id="6" varId="i"/>
+            <AssignStmt id="7">
+                <NameExpr id="8">
+                    <Name id="9" nameId="a"/>
+                </NameExpr>
+                <IntLiteralExpr id="10" value="1"/>
+            </AssignStmt>
+            <AssignStmt id="11">
+                <NameExpr id="12">
+                    <Name id="13" nameId="b"/>
+                </NameExpr>
+                <IntLiteralExpr id="14" value="2"/>
+            </AssignStmt>
+            <AssignStmt id="15">
+                <NameExpr id="16">
+                    <Name id="17" nameId="c"/>
+                </NameExpr>
+                <IntLiteralExpr id="18" value="3"/>
+            </AssignStmt>
+            <AssignStmt id="19">
+                <NameExpr id="20">
+                    <Name id="21" nameId="d"/>
+                </NameExpr>
+                <PlusExpr id="22">
+                    <NameExpr id="23">
+                        <Name id="24" nameId="a"/>
+                    </NameExpr>
+                    <NameExpr id="25">
+                        <Name id="26" nameId="b"/>
+                    </NameExpr>
+                </PlusExpr>
+            </AssignStmt>
+            <ExprStmt id="27">
+                <ParameterizedExpr id="28">
+                    <NameExpr id="29">
+                        <Name id="30" nameId="disp"/>
+                    </NameExpr>
+                    <NameExpr id="31">
+                        <Name id="32" nameId="d"/>
+                    </NameExpr>
+                </ParameterizedExpr>
+            </ExprStmt>
+            <IfStmt id="33">
+                <IfBlock id="34">
+                    <EQExpr id="35">
+                        <NameExpr id="36">
+                            <Name id="37" nameId="c"/>
+                        </NameExpr>
+                        <NameExpr id="38">
+                            <Name id="39" nameId="d"/>
+                        </NameExpr>
+                    </EQExpr>
+                    <StmtList>
+                        <ExprStmt id="40">
+                            <ParameterizedExpr id="41">
+                                <NameExpr id="42">
+                                    <Name id="43" nameId="disp"/>
+                                </NameExpr>
+                                <IntLiteralExpr id="44" value="4"/>
+                            </ParameterizedExpr>
+                        </ExprStmt>
+                    </StmtList>
+                </IfBlock>
+            </IfStmt>
+            <ForStmt id="45">
+                <AssignStmt id="46">
+                    <NameExpr id="47">
+                        <Name id="48" nameId="i"/>
+                    </NameExpr>
+                    <RangeExpr id="49">
+                        <IntLiteralExpr id="50" value="2"/>
+                        <IntLiteralExpr id="51" value="2"/>
+                        <IntLiteralExpr id="52" value="8"/>
+                    </RangeExpr>
+                </AssignStmt>
+                <StmtList>
+                    <ExprStmt id="53">
+                        <ParameterizedExpr id="54">
+                            <NameExpr id="55">
+                                <Name id="56" nameId="disp"/>
+                            </NameExpr>
+                            <NameExpr id="57">
+                                <Name id="58" nameId="i"/>
+                            </NameExpr>
+                        </ParameterizedExpr>
+                    </ExprStmt>
+                </StmtList>
+            </ForStmt>
+        </StmtList>
+    </Script>
+</CompilationUnits>
+

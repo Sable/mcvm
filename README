@@ -1,0 +1,22 @@
+DISCLAIMER
+==========
+
+This is a past version of McVM, with some parts that are work-in-progress and
+not fully working.
+
+BUILD IT
+========
+
+The easiest way to compile is to use the bootstrap.sh,
+which will populate the /vendor directory with
+LLVM and Boehm GC (it already contains Eigen matrix
+library in lib/).
+
+Some useful definitions are :
+* MCVM_USE_LAPACKE (recommended)
+* MCVM_USE_CLAPACK
+
+License
+=========
+
+License BSD - McGill University
