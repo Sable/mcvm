@@ -21,7 +21,7 @@
 #include <string>
 #include <iostream>
 #include "configmanager.h"
-#include "stdlib.h"
+#include "mcvmstdlib.h"
 #include "interpreter.h"
 #include "jitcompiler.h"
 #include "profiling.h"
@@ -76,7 +76,7 @@ int main(int argc, char** argv)
 	Client::openSocketStream(Client::FRONTEND_DEFAULT_HOST, Client::FRONTEND_DEFAULT_PORT);
 			
 	// Load the standard library
-	StdLib::loadLibrary();
+        mcvm::stdlib::loadLibrary();
 
 	// Change to the starting directory
 	bool cdResult = setWorkingDir(ConfigManager::s_startDirVar.getStringValue());

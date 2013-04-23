@@ -17,16 +17,16 @@
 // =========================================================================== //
 
 // Include guards
-#ifndef STDLIB_H_
-#define STDLIB_H_
+#ifndef MCVMSTDLIB_H_
+#define MCVMSTDLIB_H_
 
 // Header files
 #include "functions.h"
 #include "matrixobjs.h"
 
 // Standard library name space
-namespace StdLib
-{
+namespace mcvm { namespace stdlib { 
+
 	// Library function used to compute absolute values
 	extern LibFunction abs;
 
@@ -221,6 +221,6 @@ namespace StdLib
 	
 	// Function to load the library functions
 	void loadLibrary();
-};
+}}
 
-#endif // #ifndef STDLIB_H_ 
+#endif // #ifndef MCVMSTDLIB_H_ 

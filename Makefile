@@ -12,7 +12,7 @@ all:	source/analysis_arraycopy.o source/analysis_boundscheck.o source/analysis_c
 	source/chararrayobj.o source/client.o source/clientsocket.o source/configmanager.o source/dimvector.o source/endexpr.o \
 	source/environment.o source/expressions.o source/exprstmt.o source/filesystem.o source/fnhandleexpr.o source/functions.o source/ifelsestmt.o \
 	source/interpreter.o source/jitcompiler.o source/lambdaexpr.o source/loopstmts.o source/main.o source/matrixexpr.o source/matrixobjs.o source/matrixops.o source/objects.o \
-	source/paramexpr.o source/parser.o source/plotting.o source/process.o source/profiling.o source/rangeexpr.o source/rangeobj.o source/runtimebase.o source/stdlib.o source/stmtsequence.o \
+	source/paramexpr.o source/parser.o source/plotting.o source/process.o source/profiling.o source/rangeexpr.o source/rangeobj.o source/runtimebase.o source/mcvmstdlib.o source/stmtsequence.o \
 	source/switchstmt.o source/symbolexpr.o source/transform_endexpr.o source/transform_logic.o source/transform_loops.o source/transform_split.o source/transform_switch.o \
 	source/typeinfer.o source/unaryopexpr.o source/utility.o source/xml.o
 	$(CXX) source/*.o  $(LLVMLIBS) $(LIBS) -o mcvm

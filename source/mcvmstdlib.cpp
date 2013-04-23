@@ -23,7 +23,7 @@
 #include <vector>
 #include <string>
 #include <sys/time.h>
-#include "stdlib.h"
+#include "mcvmstdlib.h"
 #include "runtimebase.h"
 #include "interpreter.h"
 #include "jitcompiler.h"
@@ -33,12 +33,11 @@
 #include "cellarrayobj.h"
 #include "utility.h"
 #include "process.h"
-#include "plotting.h"
 #include "filesystem.h"
 
 // Standard library name space
-namespace StdLib
-{
+namespace mcvm { namespace stdlib {
+    
 	// Start time value for the tic-toc timer system
 	double ticTocStartTime = FLOAT_INFINITY;
 
@@ -3073,88 +3072,6 @@ namespace StdLib
 		return new ArrayObj(new MatrixF64Obj(PI));
 	}
 	
-	/*******************************************************************
-	 *Expected
-	 *plot(Y) 1Arg-> y(matrix m*n) 
-	 *plot(X1,Y1) 2Arg-> y(matrix m*n), x(matrix o*n), where o|m == 1
-	 *plot(x1,y1,opt_str) 3Arg-> y(matrix m*n), x(matrix o*n), "opt"(string), where o|m == 1
-	 *******************************************************************/
-	ArrayObj* plotFunc(ArrayObj* pArguments)
-	{	
-
-			
-
-		Plotting plot_machina = Plotting(pArguments) ;
-		
-		
-		//parsing and saving the arguments
-		plot_machina.parsing();
-		
-
-		
-		//save the option to a file
-		plot_machina.printOpt();
-		
-
-		
-		//save the matrice's data to a file
-		plot_machina.printData();
-		
-
-		
-		//call to gunplot
-		plot_machina.callGnuplot();
-		
-
-		
-		return new ArrayObj();
-	
-	}
-
-	/******************************************************************
-	 * Function: plotFunc()
-	 * Purpose : plot a 2D function using gnuplot
-	 * Initial : Olivier Savary on June 1, 2009
-	 * Revision: unfinished, untested, unimplimented
-	 ********************************************************************/
-	TypeSetString plotFuncTypeMapping(const TypeSetString& argTypes)
-	{
-		
-		if (argTypes.empty()){
-			return TypeSetString();
-		}else if (argTypes.size() == 1){
-			//1 args->matrix of floating point
-			return typeSetStrMake(TypeInfo(
-						DataObject::MATRIX_F64,
-						true,
-						false,
-						false,
-						false,
-						TypeInfo::DimVector(),
-						NULL,
-						TypeSet()
-				));
-		
-		}else if(argTypes.size() == 2){
-			//2 args->2 matrices of floating point
-			return typeSetStrMake(TypeInfo(
-								DataObject::MATRIX_F64,
-								true,
-								false,
-								false,
-								false,
-								TypeInfo::DimVector(),
-								NULL,
-								TypeSet()
-						));
-		
-		}else if(argTypes.size() == 3){
-			return TypeSetString();
-		}else{
-			return TypeSetString();
-		}
-			
-	}
 	
 	/***************************************************************
 	* Function: pwdFunc()
@@ -4698,7 +4615,6 @@ namespace StdLib
 	LibFunction numel		("numel"	, numelFunc		, intScalarTypeMapping			);
 	LibFunction ones		("ones"		, onesFunc		, createF64MatTypeMapping		);
 	LibFunction pi			("pi"		, piFunc		, realScalarTypeMapping			);
-	LibFunction plot        ("plot"     , plotFunc      , plotFuncTypeMapping           );
 	LibFunction pwd			("pwd"		, pwdFunc		, stringValueTypeMapping		);
 	LibFunction rand		("rand"		, randFunc		, createF64MatTypeMapping		);
 	LibFunction reshape		("reshape"	, reshapeFunc	, reshapeFuncTypeMapping		);
@@ -4774,7 +4690,6 @@ namespace StdLib
 		Interpreter::setBinding(numel.getFuncName()		, (DataObject*)&numel		);
 		Interpreter::setBinding(ones.getFuncName()		, (DataObject*)&ones		);
 		Interpreter::setBinding(pi.getFuncName()		, (DataObject*)&pi			);
-		Interpreter::setBinding(plot.getFuncName()      , (DataObject*)&plot        );
 		Interpreter::setBinding(pwd.getFuncName()		, (DataObject*)&pwd			);
 		Interpreter::setBinding(rand.getFuncName()		, (DataObject*)&rand		);
 		Interpreter::setBinding(reshape.getFuncName()	, (DataObject*)&reshape		);
@@ -4845,4 +4760,4 @@ namespace StdLib
 			true		
 		);	
 	}
-};
+}}
